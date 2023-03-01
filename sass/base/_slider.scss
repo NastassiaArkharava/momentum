@@ -1,0 +1,20 @@
+.slider__icon {
+	position: absolute;
+	top: calc(50% - 16px);
+}
+
+.slide-prev {
+	left: 20px;
+	background-image: url("../assets/svg/slider-prev.svg");
+	@include media-mobile {
+		left: 0px;
+	}
+}
+
+.slide-next {
+	right: 20px;
+	background-image: url("../assets/svg/slider-next.svg");
+	@include media-mobile {
+		right: 0px;
+	}
+}

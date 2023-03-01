@@ -1,0 +1,55 @@
+.weather {
+	@extend %transition;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 10px;
+	width: 280px;
+	@include media-mobile {
+		width: 150px;
+	}
+	&_hidden {
+		opacity: 0;
+	}
+}
+
+.city {
+	width: 100%;
+	padding: 5px;
+	@extend %font-prim;
+	@include font;
+	color: $color-light;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid $color-light;
+	background-color: transparent;
+	text-align: center;
+	&::placeholder {
+		color: $color-light;
+		@extend %opacity;
+	}
+	@include media-mobile {
+		@include font($size: 14px, $height: 14px);
+	}
+}
+
+.weather__general {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.weather-icon {
+	font-size: 44px;
+}
+
+.weather__details {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.weather__error {
+	align-self: center;
+}

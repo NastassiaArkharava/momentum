@@ -1,0 +1,9 @@
+.header {
+	height: 40vh;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	@include media-mobile {
+		padding: 10px 5px;
+	}
+}

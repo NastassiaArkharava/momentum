@@ -1,0 +1,104 @@
+.footer {
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px;
+	@include media-mobile {
+		padding: 10px 5px;
+	}
+}
+
+.change-quote {
+	@extend %transition;
+	background-image: url("../assets/svg/reload.svg");
+	margin-bottom: 15px;
+	&:active {
+		transform: rotate(90deg);
+	}
+	@include media-mobile {
+		margin-bottom: 5px;
+	}
+	&_hidden {
+		opacity: 0;
+	}
+}
+
+.quote {
+	padding: 0 80px;
+	@extend %font-add;
+	@include font($size: 28px, $height: 34px);
+	@extend %transition;
+	@include media-mobile {
+		@include font($size: 24px, $height: 28px);
+		padding: 0;
+	}
+	&_hidden {
+		opacity: 0;
+	}
+}
+
+.footer__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.settings-icon {
+	background-image: url("../assets/svg/settings.svg");
+	filter: invert(1);
+	&:active {
+		transform: rotate(90deg);
+	}
+}
+
+.rsschool {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	@include media-mobile {
+		gap: 10px;
+	}
+}
+
+.rsschool__logo {
+	display: block;
+	width: 100px;
+	height: 37px;
+	background-image: url('../assets/svg/rsschool.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: invert(1);
+	@extend %opacity;
+	@extend %transition;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.github {
+	text-decoration: none;
+	color: $color-light;
+	@extend %opacity;
+	@extend %transition;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.todo__icon {
+	background-image: url("../assets/svg/todo.svg");
+	cursor: pointer;
+	@extend %transition;
+	@extend %opacity;
+	&:hover {
+		opacity: 1;
+	}
+	&_hidden {
+		opacity: 0;
+		&:hover {
+			opacity: 0;
+		}
+	}
+}

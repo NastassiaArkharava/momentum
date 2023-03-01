@@ -1,0 +1,80 @@
+.todo {
+	z-index: 2;
+	position: fixed;
+	bottom: -100vh;
+	right: 10px;
+	width: 300px;
+	max-height: calc(100vh - 160px);
+	background-color: $color-settings;
+	border-radius: 30px;
+	padding: 20px 20px;
+	@extend %transition;
+	&_active {
+		bottom: 80px;
+	}
+}
+
+.todo_container {
+	@extend %font-prim;
+	@include font($size: 20px, $height: 20px);
+}
+
+.todo__item {
+	margin-bottom: 15px;
+	list-style: none;
+	display: flex;
+	gap: 10px;
+}
+
+.todo__text {
+	flex-grow: 1;
+	width: 100%;
+	text-align: left;
+	@extend %font-prim;
+	@include font($size: 20px, $height: 20px);
+	color: $color-light;
+	border: 0;
+	outline: 0;
+	background-color: transparent;
+	&_active {
+		background-color: $color-alfa-light;
+	}
+	&_unactive {
+		color: $color-alfa-light;
+	}
+}
+
+.todo__edit {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	background-size: 20px 20px;
+	background-image: url("../assets/svg/pencil.svg");
+	filter: invert(1);
+}
+
+.todo__delete {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	background-size: 20px 20px;
+	background-image: url("../assets/svg/trash.svg");
+	filter: invert(1);
+}
+
+.todo_new {
+	width: 100%;
+	padding: 5px;
+	@extend %font-prim;
+	@include font($size: 20px, $height: 20px);
+	color: $color-light;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid $color-light;
+	background-color: transparent;
+	text-align: center;
+	&::placeholder {
+		color: $color-light;
+		@extend %opacity;
+	}
+}

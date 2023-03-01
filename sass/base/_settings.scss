@@ -1,0 +1,131 @@
+.settings {
+	z-index: 3;
+	position: fixed;
+	top: 100vh;
+	left: calc((100vw - 500px) / 2);
+	width: 500px;
+	height: 500px;
+	background-color: $color-settings;
+	border-radius: 30px;
+	padding: 20px 50px 50px;
+	@extend %transition;
+	&_active {
+		top: calc((100vh - 500px) / 2);
+	}
+	@include media-mobile {
+		left: calc((100vw - 300px) / 2);
+		width: 300px;
+		height: 450px;
+		padding: 0 20px 20px;
+		&_active {
+			top: calc((100vh - 450px) / 2);
+		}
+	}
+}
+
+.settings__header {
+	display: flex;
+	flex-direction: column;
+}
+
+.settings__close {
+	align-self: flex-end;
+	@extend %font-time;
+	@include font($size: 50px, $height: 40px);
+	cursor: pointer;
+	padding: 0 10px;
+}
+
+.settings__title {
+	@include font($size: 26px, $height: 26px);
+}
+
+.settings__content {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	@include font($size: 20px, $height: 20px);
+	text-align: left;
+	@include media-mobile {
+		@include font($size: 15px, $height: 15px);
+	}
+}
+
+.settings__item {
+	border: 2px solid $color-alfa-light;
+	border-radius: 20px;
+	padding: 10px 20px;
+	@include media-mobile {
+		padding: 10px;
+	}
+}
+
+.settings__language {
+	display: grid; 
+	grid-template-areas: 
+		". . ."; 
+}
+
+.settings__source {
+	display: grid;
+	margin-bottom: 10px;
+	align-items: center;
+  grid-template-areas: 
+		". .";
+}
+
+.settings__source-container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.settings__tag {
+	display: grid; 
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+		". .";
+}
+
+.tag {
+	width: 100%;
+	padding: 5px;
+	@extend %font-prim;
+	@include font($size: 20px, $height: 20px);
+	color: $color-light;
+	border: 0;
+	outline: 0;
+	border-bottom: 1px solid $color-light;
+	background-color: transparent;
+	text-align: center;
+	&::placeholder {
+		color: $color-light;
+		@extend %opacity;
+	}
+	@include media-mobile {
+		@include font($size: 15px, $height: 15px);
+	}
+	&_unactive {
+		opacity: 0;
+	}
+}
+
+.settings__visible {
+	margin-top: 10px;
+	display: grid; 
+	gap: 10px 0px;
+	grid-template-areas: 
+		". . ."
+		". . ."
+		". . .";
+	@include media-mobile {
+		gap: 15px 0px;
+		grid-template-areas: 
+			". ."
+			". ."
+			". ."
+			". .";
+	}
+}

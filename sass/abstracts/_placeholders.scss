@@ -1,0 +1,25 @@
+%font-prim {
+	font-family: 'Libre Baskerville', 'Forum', serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+%font-add {
+	font-family: 'Dancing Script', 'Caveat', cursive;
+	font-weight: 700;
+	font-style: normal;
+}
+
+%font-time {
+	font-family: 'Chivo Mono', monospace;
+	font-weight: 700;
+	font-style: normal;
+}
+
+%transition {
+	transition: all .5s ease;
+}
+
+%opacity {
+	opacity: .6;
+}

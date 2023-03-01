@@ -1,0 +1,12 @@
+@mixin font ($size: 26px, $height: 34px) {
+	font-size: $size;
+	line-height: $height;
+}
+
+@mixin media-tablet {
+	@media (max-width: ($netbook-width - 1px)) { @content;}
+}
+
+@mixin media-mobile {
+	@media (max-width: ($tablet-width - 1px)) { @content;}
+}

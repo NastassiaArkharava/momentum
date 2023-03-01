@@ -1,0 +1,19 @@
+.icon {
+	width: 32px;
+	height: 32px;
+	background-size: 32px 32px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	@extend %opacity;
+	@extend %transition;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+	}
+	&:active {
+		transform: scale(1.1);
+	}
+}

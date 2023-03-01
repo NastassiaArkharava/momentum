@@ -1,0 +1,129 @@
+.player {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	width: 260px;
+	@extend %transition;
+	@include media-mobile {
+		width: 150px;
+	}
+	&_hidden {
+		opacity: 0;
+	}
+}
+
+.progress-bar {
+	width: 100%;
+	outline: 0;
+}
+
+.volume-time-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.volume {
+	position: relative;
+  z-index: 1;
+	.volume-bar {
+		position: absolute;
+    left: 25px;
+    top: 2px;
+		width: 0;
+		@extend %transition;
+		visibility: hidden;
+		outline: 0;
+	}
+	&:hover {
+		.volume-bar {
+			width: 140px;
+			visibility: visible;
+			cursor: pointer;
+			@include media-mobile {
+				width: 120px;
+			}
+		}
+	}
+}
+
+.volume__icon {
+	width: 20px;
+	height: 20px;
+	background-size: 20px 20px;
+	background-image: url("../assets/svg/volume.svg");
+}
+
+.mute {
+	background-image: url("../assets/svg/mute.svg");
+}
+
+.audio-time {
+	@include font($size: 16px, $height: 16px);
+	@include media-mobile {
+		@include font($size: 10px, $height: 10px);
+	}
+}
+
+.player__controls {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.play-prev {
+	background-image: url("../assets/svg/play-prev.svg");
+}
+
+.play {
+	width: 40px;
+	height: 40px;
+	background-size: 40px 40px;
+	background-image: url("../assets/svg/play.svg");
+}
+
+.pause {
+	background-image: url("../assets/svg/pause.svg");
+}
+
+.play-next {
+	background-image: url("../assets/svg/play-next.svg");
+}
+
+.play-list {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	@include font($size: 14px, $height: 14px);
+}
+
+.play-list__item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	list-style: none;
+	text-align: left;
+	@extend %opacity;
+	@extend %transition;
+	&:hover {
+		opacity: 1;
+	}
+	&_active {
+		opacity: 1;
+	}
+}
+
+.play-list__icon {
+	width: 25px;
+	height: 25px;
+	background-size: 25px 25px;
+}
+
+.play-list__title {
+	margin-left: 5px;
+	white-space: nowrap;
+	@include media-mobile {
+		width: 125px;
+		white-space: break-spaces;
+	}
+}
